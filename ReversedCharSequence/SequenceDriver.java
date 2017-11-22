@@ -1,0 +1,9 @@
+public class SequenceDriver{
+    public static void main(String[] args){
+	ReversedCharSequence boop=new ReversedCharSequence("hello");
+	System.out.println(boop);
+	System.out.println(boop.length());
+	System.out.println(boop.charAt(0));
+        System.out.println(boop.subSequence(0,2));
+    }
+}
