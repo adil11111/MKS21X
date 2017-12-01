@@ -1,4 +1,5 @@
-public class SuperArray{
+import java.util.Iterator;
+public class SuperArray implements Iterable<String>{
     private String[] data;
     private int size;
 
@@ -9,6 +10,9 @@ public class SuperArray{
     public SuperArray(int startingCapacity){
 	data=new String[startingCapacity];
 	size=0;
+    }
+    public Iterator<String> iterator(){
+	return new superArrayIterator(this);
     }
     public String toString(){
          String gatherer="[";
