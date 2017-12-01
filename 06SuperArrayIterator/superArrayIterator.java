@@ -18,7 +18,6 @@ public class superArrayIterator implements Iterator<String>{
 	}
 	return data.get(current-1);
 	}
-    }
     public boolean hasNext(){
 	return current< data.size();
     }
