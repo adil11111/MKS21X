@@ -1,3 +1,4 @@
+import java.util.Arrays;
 public class Sorts{
 
   public static String name(){
@@ -16,17 +17,34 @@ public class Sorts{
          }
       }
   }
-    public static void insertionSort(int[] data){
-      for (int i=1;i<data.length;i++){
-         int min=data[0];
-         for (int current=0;current<i;current++){
-            if (data[i]<data[current]){
-            min =data[i];
-            data[i]=data[current];
-            data[current]=min;
-	    }
-         }
-      }
+   public static void insertionSort(int[] data){
+       int index=1;
+       while(index<data.length){
+	   int counter=index;
+	   while(counter!=0 && data[index]<data[counter-1]){
+	       counter--;
+	   }
+	   move(data,index,counter);
+	   index++;
+       }
    }
+    public static void	move(int[] data, int oldindex,int newindex){
+	int temp=data[oldindex];
+	for (int i=oldindex;i>newindex;i--){
+	    data[i]=data[i-1];
+	}
+	data[newindex]=temp;		 
+    }
+
+    public static void main(String[] args){
+	int[] array= new int[100000];
+	for (int i=0;i<1000;i++){
+	    array[i]=(int)(Math.random()*10000);
+	}
+	int[] newarray={7,8,3,1,5,8,2};
+	//System.out.println(Arrays.toString(array));
+        insertionSort(array);
+    	System.out.println(Arrays.toString(array));
+    }
 }
     
