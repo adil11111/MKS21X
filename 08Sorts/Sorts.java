@@ -6,6 +6,9 @@ public class Sorts{
   }
 
   public static void selectionSort(int[] data){
+      if (data.length==0 || data.length==1){
+	  return;
+      }
       for (int i=0;i<data.length;i++){
          int min=data[i];
          for (int current=i;current<data.length;current++){
@@ -18,6 +21,9 @@ public class Sorts{
       }
   }
    public static void insertionSort(int[] data){
+       if (data.length==0 || data.length==1){
+	  return;
+      }
        int index=1;
        while(index<data.length){
 	   int counter=index;
@@ -29,6 +35,9 @@ public class Sorts{
        }
    }
     public static void bubbleSort(int[] data){
+	if (data.length==0 || data.length==1){
+	  return;
+      }
 	int index=data.length-1;
 	while(index>0){
 	    int counter=0;
@@ -51,16 +60,19 @@ public class Sorts{
 	}
 	data[newindex]=temp;		 
     }
-
+    /*
     public static void main(String[] args){
-	int[] array= new int[100000];
+	int[] array= new int[1000];
+	int index=array.length-1;
 	for (int i=0;i<1000;i++){
-	    array[i]=(int)(Math.random()*10000);
+	    
+	    array[i]=index;//(int)(Math.random()*10000);
+	    index--;
 	}
-	int[] newarray={7,8,3,1,5,8,2};
+	int[] newarray={3,2};
 	//System.out.println(Arrays.toString(array));
-        bubbleSort(array);
-    	System.out.println(Arrays.toString(array));
-    }
+        bubbleSort(newarray);
+    	System.out.println(Arrays.toString(newarray));
+	}*/
 }
     
