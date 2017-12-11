@@ -28,6 +28,22 @@ public class Sorts{
 	   index++;
        }
    }
+    public static void bubbleSort(int[] data){
+	int index=data.length-1;
+	while(index>0){
+	    int counter=0;
+	    while(counter<index){
+		if(data[counter]>data[counter+1]){
+		    int temp=data[counter+1];
+		    data[counter+1]=data[counter];
+		    data[counter]=temp;
+		}
+		counter++;
+	    }
+	    index--;
+	}
+    }
+
     public static void	move(int[] data, int oldindex,int newindex){
 	int temp=data[oldindex];
 	for (int i=oldindex;i>newindex;i--){
@@ -43,7 +59,7 @@ public class Sorts{
 	}
 	int[] newarray={7,8,3,1,5,8,2};
 	//System.out.println(Arrays.toString(array));
-        insertionSort(array);
+        bubbleSort(array);
     	System.out.println(Arrays.toString(array));
     }
 }
