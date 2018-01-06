@@ -49,7 +49,7 @@ public class Barcode implements Comparable<Barcode>{
     public static String toZip(String code){
 	String[] key={ "||:::" , ":::||", "::|:|", "::||:", ":|::|", ":|:|:", ":||::", "|:::|","|::|:","|:|::"};
 	String gatherer="";
-	if (code.length()!= 32 && code.charAt(0)!='|' && code.charAt(31)!='|'){
+	if (code.length()!= 32 || code.charAt(0)!='|' || code.charAt(31)!='|'){
 	    throw new IllegalArgumentException();
 	}
 	for (int c=1;c<code.length()-1;c+=5){
