@@ -106,10 +106,8 @@ public class SuperArray{
 	if (size==data.length){
 	    resize();
 	}
-	else{
-	    for (int mover=size-1;mover>=index;mover--){
-		data[mover+1]=data[mover];
-	    }
+	for (int mover=size-1;mover>=index;mover--){
+	    data[mover+1]=data[mover];
 	}
 	data[index]=element;
 	size++;
